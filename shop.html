@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shop</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            /* internal styles */
+
+            .product img{
+                width: 100%;
+                height: auto;
+                box-sizing: border-box;
+                object-fit: cover;
+            }
+
+            #featured\  > div.row.mx-auto.container > nav > ul > li.page-item.active > a{
+                background-color: black;
+            }
+
+            #featured\  > div.row.mx-auto.container > nav > ul > li:nth-child(n):hover>a{
+                background-color: coral;
+                color: #fff;
+            }
+
+            .pagination a{
+                color: black;
+            }
+           /* CSS for the footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-logo h3,
+        .footer-links a {
+            margin: 0;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s; /* Adding transition for smooth color change */
+        }
+
+        .footer-logo h3:hover,
+        .footer-links a:hover {
+            color: #ff6347; /* Change the color to your desired hover color */
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.footer-links a:last-child {
+  margin-right: 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social img {
+  max-width: 30px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #007bff;
+}
+.footer-logo h3 {
+            margin: 0;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s; /* Adding transition for smooth color change */
+        }
+
+        .footer-logo h3:hover {
+            color: #ff6347; /* Change the color to your desired hover color */
+        }
+
+        #banner{
+  background-image: url("img1/products/cart.jpg");
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top 70px center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+        </style>
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 fixed-top">
+            <div class="container">
+                <img src="logo3.png" alt="">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i id="bar" class="fas fa-bars"></i></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="Home.html">Home</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link active" href="Home.html">Shop</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                  
+                  
+                  <li class="nav-item">
+                    <a href="register.php"> <i class="fa solid fa-users"></i></a>
+                      </li>
+              </div>
+            </div>
+          </nav>  
+
+        <section id="featured " class="my-5 py-5">
+            <div class="container mt-5 py-5">
+                <h2 class="font-weight-bold">Our Featured</h2>
+                <hr>
+                <p>Here you can check our new products with fair price on Shop-Way </p>
+            </div>
+            <div class="row mx-auto container">
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/1.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men's Casual T-Shirt</h5>
+                    <h4 class="p-price">Rs 399</h4>
+                   <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Mens Casual T-shirt', 'img/shop/1.jpg', 399) ">Add to Cart</button></a> 
+                </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/2.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men's sport Shoe's </h5>
+                    <h4 class="p-price">Rs 499</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Mens sport Shoes', 'img/shop/2.jpg', 499) ">Add to Cart</button></a> 
+                    <!-- <a href="cart.html"><button class="buy-btn" id="addToCartBtn">Add To Cart</button></a> -->
+                    
+                </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/3.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Women Stylish HandBag</h5>
+                    <h4 class="p-price">Rs 899</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Women Stylish HandBag', 'img/shop/3.jpg', 899) ">Add to Cart</button></a> 
+                </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/4.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men's Casual Shoes</h5>
+                    <h4 class="p-price">Rs 399</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Mens Casual Shoes', 'img/shop/4.jpg', 399) ">Add to Cart</button></a> 
+                </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/5.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men's Cap</h5>
+                    <h4 class="p-price">Rs 299</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Mens Cap', 'img/shop/5.jpg', 299) ">Add to Cart</button></a> 
+                </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/6.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men's Stylish All Wheather Jacket</h5>
+                    <h4 class="p-price">Rs 999</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Mens Stylish All Wheather Jacket', 'img/shop/6.jpg', 999) ">Add to Cart</button></a> 
+                </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/7.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Sports Shoes</h5>
+                    <h4 class="p-price">Rs 299</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Sports Shoes', 'img/shop/7.jpg', 299) ">Add to Cart</button></a> 
+                </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/8.jpg" alt="">
+                    <div class="star">
+                  <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Women Stylish Jacket</h5>
+                    <h4 class="p-price">Rs 999</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('T-shirt', 'img/shop/8.jpg', 999) ">Add to Cart</button></a>                 </div>
+
+                
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/9.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">American Tourister Bag</h5>
+                    <h4 class="p-price">Rs 740</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('American Tourister Bag', 'img/shop/9.jpg', 740) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/10.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Titan Stylish Watch</h5>
+                    <h4 class="p-price">1299</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Titan Stylish Watch', 'img/shop/10.jpg', 1299) ">Add to Cart</button></a>                    </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/11.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Women's Cap</h5>
+                    <h4 class="p-price">Rs 399</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Women Cap', 'img/shop/11.jpg', 399) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/12.jpg" alt="">
+                    <div class="star">
+                  <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Puma Sports Boots</h5>
+                    <h4 class="p-price">Rs 1049</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Puma Sports Boots', 'img/shop/12.jpg', 1049) ">Add to Cart</button></a>                 </div>
+
+                 <section id="banner" class="my-5 py-5">
+            <div class="container">
+                <h4>MID SEASON'S SALE</h4>
+                <h1><span>Autumn Collections</span> <br>UP TO 20% OFF </h1>
+                <button class="text-uppercase">Shop Now</button>
+            </div>
+
+          </section>
+
+
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/13.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Fastrack Watch</h5>
+                    <h4 class="p-price">Rs 1499</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Fastrack Watch', 'img/shop/13.jpg', 1499) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/14.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">WoodLand High Tops For Men</h5>
+                    <h4 class="p-price">Rs 2249</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('WoodLand High Tops For Men', 'img/shop/14.jpg', 2249) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/15.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Embroidered Regular Cap for Men</h5>
+                    <h4 class="p-price">Rs 199</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Embroidered Regular Cap for Men', 'img/shop/15.jpg', 199) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/16.jpg" alt="">
+                    <div class="star">
+                  <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men Typography Round Neck T-Shirt</h5>
+                    <h4 class="p-price">Rs 499</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Men Typography Round Neck T-Shirt', 'img/shop/16.jpg', 499) ">Add to Cart</button></a>                 </div>
+
+                
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/17.jpg"alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Women Solid Casual Jacket</h5>
+                    <h4 class="p-price">Rs 426</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Women Solid Casual Jacket', 'img/shop/17.jpg', 426) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/18.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men's Solid Skull Cap</h5>
+                    <h4 class="p-price">Rs 199</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Mens Solid Skull Cap', 'img/shop/18.jpg', 199) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/19.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Allen Solly Men Solid Bomber Jacket</h5>
+                    <h4 class="p-price">Rs 2049</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Allen Solly Men Solid Bomber Jacket', 'img/shop/19.jpg', 2049) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/20.jpg" alt="">
+                    <div class="star">
+                  <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Women Viscose Rayon Kurta Set</h5>
+                    <h4 class="p-price">Rs 499</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Women Viscose Rayon Kurta Set', 'img/shop/20.jpg', 499) ">Add to Cart</button></a>                 </div>
+
+                
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/25.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">BILVE Men Round Neck T-Shirt</h5>
+                    <h4 class="p-price">Rs 499</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('BILVE Men Round Neck T-Shirt', 'img/shop/25.jpg', 499) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/23.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">AUSK Men Striped Round Neck T-Shirt</h5>
+                    <h4 class="p-price">Rs 349</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('AUSK Men Striped Round Neck T-Shirt', 'img/shop/23.jpg', 349) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/24.jpg" alt="">
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">U.S. POLO ASSN. Men Round Neck T-Shirt</h5>
+                    <h4 class="p-price">Rs 599</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('U.S. POLO ASSN. Men Round Neck T-Shirt', 'img/shop/24.jpg', 599) ">Add to Cart</button></a>                 </div>
+
+                <div class="product text-center col-lg-3 col-md-4 col-12">
+                    <img class="img-fluid mb-3" src="img/shop/26.jpg" alt="">
+                    <div class="star">
+                  <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h5 class="p-name">Men Round Neck cotton Blend T-Shirt</h5>
+                    <h4 class="p-price">Rs 399</h4>
+                    <a href="cart.html"><button class="buy-btn" id="addToCartBtn1" onclick="addToCart('Men Round Neck cotton Blend T-Shirt', 'img/shop/26.jpg', 399) ">Add to Cart</button></a>                 </div>
+
+                <nav aria-label="...">
+                    <ul class="pagination mt-5">
+                    <li class="page-item disabled">  
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item" aria-current="page">
+                    <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                    </ul>
+                    </nav>
+            </div>
+          </section>
+        
+        <!-- Cart Modal -->
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Shopping Cart</h3>
+                <div id="cartItems"></div>
+                <div class="total">
+                    <h4>Total Price: <span id="totalPrice">$0.00</span></h4>
+                </div>
+                <button id="clearCartBtn">Clear Cart</button>
+            </div>
+        </div>
+        
+          
+
+
+
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <h3>Shop-Way</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="Home.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Shop-Way. All rights reserved.</p>
+            </div>
+        </footer>
+    
+          <!-- Your existing HTML code for the shop.html -->
+
+<script>
+    function addToCart(productName, productImage, productPrice) {
+      // Get the cart items from localStorage
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  
+      // Check if the product is already in the cart
+      const existingProduct = cartItems.find(item => item.name === productName);
+      if (existingProduct) {
+        // If the product is already in the cart, show a message and do not add it again
+        alert(`"${productName}" is already in your cart.`);
+      } else {
+        // If the product is not in the cart, add it to the cartItems array
+        const newProduct = {
+          name: productName,
+          image: productImage,
+          price: productPrice,
+          quantity: 1,
+        };
+        cartItems.push(newProduct);
+        // Save the updated cart items back to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  
+        // Show a message indicating the product was added to the cart
+        alert(`"${productName}" added to cart!`);
+  
+        // Redirect the user to the cart.html page
+        window.location.href = 'cart.html';
+      }
+    }
+  </script>
+  </body>
+  
+  </html>
+  
+          

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the product details section */
+        .product-details {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .product-details label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .product-details textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Payment Information</h1>
+    <form>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="zipCode">Zip Code:</label>
+        <input type="text" id="zipCode" name="zipCode" required>
+
+
+        
+        <button type="submit" id="order">Place Order</button>
+    </form>
+
+    <script>
+        // Get the query parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productDetails = urlParams.get('products');
+        
+        // Set the product details in the form field
+        const productDetailsField = document.getElementById('productDetails');
+        productDetailsField.textContent = productDetails;
+    </script>
+    <script>document.getElementById('order').addEventListener('click', function() {
+        alert('Your order is successfully placed!');
+        // Here, you can add code to handle the actual purchase process, such as redirecting to a payment gateway.
+      });
+      </script>
+</body>
+</html>

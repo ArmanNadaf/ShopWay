@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact US Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url('banner.png');
+    background-size: cover;
+}
+.contact.content{
+    max-width: 800px;
+    text-align: center;
+}
+.contact.content h2{
+    
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    padding: 20px 0;
+    
+   
+
+}
+.container{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 30px;
+
+
+}
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+.container .contactInfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+
+}
+.container .contactInfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+.container .contactInfo .box .text
+{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+
+}
+.container .contactInfo .box .text h3
+{
+    font-weight: 500;
+    color: #00bcd4;
+}
+.contactForm{
+   width: 40%;
+    padding: 40px;
+    background: #fff;
+
+}
+.contactForm h2
+{
+    font-size:30px ;
+    color: #333;
+    font-weight: 500;
+}
+.contactForm .inputBox
+{
+   position: relative;
+   width: 100%;
+   margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea 
+{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+
+}
+.contactForm .inputBox span
+{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+    color: #e91e63;
+    font-size:12px;
+    transform:transitionY(-20px);
+}
+.contactForm .inputBox input[type="submit"]
+{
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+
+}
+@media (max-width: 991px)
+{
+    .contact 
+    {
+        padding: 50px;
+    }
+    .container
+    {
+      flex-direction: column;
+
+    }
+    .container .contactInfo
+    {
+        margin-bottom: 40px;
+    }
+    .container .contactInfo,
+    .contactForm
+    {
+      width: 100%;
+    }
+}
+</style>
+
+    <section class="contact">
+        <div class="content">
+            <h2>#Let's-talk</h2>
+            <p><b>LEAVE A MESSAGE,WE LOVE TO HEAR FROM YOU!</b></p>
+
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <div class="text">
+                        <h3><b>Address</b></h3>
+                        <p>Ichalkaranji, Maharashtra <br>416-115</p>
+                    </div>
+                </div>
+            
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                        <div class="text">
+                            <h3><b>phone</b></h3>
+                            <p>+91 12345-67890</p>
+                        </div>
+                    </div>
+                
+                        <div class="box">
+                            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="text">
+                                <h3><b>Email</b></h3>
+                                <p>aaecomm18@gmail.com</p>
+                            </div>
+                        </div>
+
+            </div>
+            <div class="contactForm">
+                <form name="submit-to-google-sheet">
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text"name="Full Name" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text"name="Email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                       <textarea name="Message" required="required"></textarea>
+                        <span>Type your Message</span>
+                    </div>
+                    <div class="inputBox">
+                        
+                        <input type="submit" name="" value="Send">
+                     </div>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </section>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwk3nEqsO27Zy_QwglP4P419AQ0TC74-Te30cfiuMi1MbhIvX6810tmg3NoytfdV4_R/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+            msg.innerHTML="Message sent Successfully"
+            setTimeout(function(){
+            msg.innerHTML=""
+            },2000)
+            form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      
+</body>
+</html>

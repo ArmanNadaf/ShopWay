@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+/* ... (previous CSS) ... */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    padding: 10px 0;
+}
+
+nav {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+main {
+    padding: 40px 0;
+}
+
+.hero-section {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.about-content h3 {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #007bff;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.team-list {
+    list-style: none;
+    padding: 0;
+}
+
+.team-list li {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+.team-list li:last-child {
+    border-bottom: none;
+}
+
+.team-list h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.team-list p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+ /* CSS for the footer */
+ footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-logo h3,
+        .footer-links a {
+            margin: 0;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s; /* Adding transition for smooth color change */
+        }
+
+        .footer-logo h3:hover,
+        .footer-links a:hover {
+            color: #ff6347; /* Change the color to your desired hover color */
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.footer-links a:last-child {
+  margin-right: 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social img {
+  max-width: 30px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #007bff;
+}
+.footer-logo h3 {
+            margin: 0;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s; /* Adding transition for smooth color change */
+        }
+
+        .footer-logo h3:hover {
+            color: #ff6347; /* Change the color to your desired hover color */
+        }
+    /* Basic card styles */
+.team-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 15px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Added background-color transition */
+}
+
+/* Hover effect */
+.team-member:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    background-color: #f1f1f1; /* Background color on hover */
+}
+
+/* Text alignment */
+.team-member h4 {
+    margin: 0;
+    font-size: 24px;
+    color: blueviolet;
+}
+
+.team-member h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #777;
+}
+
+.team-member p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+
+/* Center alignment for the main points */
+.about-content .center {
+    text-align: center;
+}
+
+/* Hover effect for main points */
+.about-content h2:hover,
+.about-content h3:hover,
+.about-content h4:hover {
+    color: #007bff;
+}
+
+/* Hover effect for the footer logo */
+.footer-logo h3:hover {
+    color: #ff6347;
+}
+    </style>
+</head>
+
+<body>
+
+
+    <main>
+        <section class="hero-section">
+            <h1>Welcome to Our Shop-Way E-Commerce Website</h1>
+        </section>
+
+        <section class="about-section">
+            <div class="about-content">
+                <h2 class="center">About Us</h2>
+                <p class="center"><b>Welcome to Shop-Way.Your One-Stop Destination for Exceptional Online Shopping!</b></p>
+                <p class="center">At Shop-Way, we believe that shopping should be more than just a transaction; it should be an immersive experience filled with excitement and joy. Our journey began with a vision to create an e-commerce platform that offers a delightful shopping adventure, where customers can discover an extensive range of premium products, all in one place.</p>
+
+                <h3 class="center">Our Mission</h3>
+                <p class="center">"Our mission is to provide a seamless and delightful online shopping experience, offering a curated selection of high-quality products at competitive prices. We strive to empower our customers with convenience, choice, and personalized recommendations, ensuring that they find exactly what they need with ease. Committed to exceptional customer service, we aim to build lasting relationships and exceed expectations at every step of the journey. Together, we're creating a vibrant online marketplace where shopping becomes an enjoyable adventure."</p>
+
+                <h3 class="center">Our Vision</h3>
+                <p class="center">"Our vision is to be the leading online destination for customers seeking exceptional products and a delightful shopping experience. By leveraging cutting-edge technology and data-driven insights, we aim to revolutionize the way people shop online. We envision a platform that offers a vast and diverse selection of top-quality products, combined with personalized recommendations that anticipate and exceed our customers' desires. As we grow, our commitment to innovation, sustainability, and customer-centricity will remain at the core of our success. Together, we are shaping the future of e-commerce, setting new standards, and fostering an engaged community of passionate shoppers."</p>
+
+                <h3 class="center">Our Team</h3>
+<ul class="team-list">
+    <li class="team-member">
+        <h4>Aditya Kulkarni</h4>
+        <h5>Student</h5>
+        <p>Sharad Institute of Technology College Of Engineering, Yadrav</p>
+    </li>
+    <li class="team-member">
+        <h4>Arman Nadaf</h4>
+        <h5>Student</h5>
+        <p>Sharad Institute of Technology College Of Engineering, Yadrav</p>
+    </li>
+</ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h3>Shop-Way</h3>
+            </div>
+            <div class="footer-links">
+                <a href="Home.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Shop-Way. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

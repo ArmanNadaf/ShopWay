@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .cart-item-header {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+            align-items: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .cart-item img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .cart-item h4 {
+            margin: 0;
+        }
+
+        .cart-item p {
+            margin: 0;
+        }
+
+        .cart-item input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .cart-item button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cart-item button:hover {
+            background-color: #0056b3;
+        }
+
+        .total {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .place-order {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .place-order button {
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .place-order button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="cartItemsContainer">
+        <div class="cart-item-header">
+            <div>Image</div>
+            <div>Name</div>
+            <div>Price</div>
+            <div>Quantity</div>
+            <div>Total</div>
+            <div>Action</div>
+        </div>
+    </div>
+    <div id="cartItemsContainer">
+        <!-- Cart items will be dynamically rendered here -->
+    </div>
+
+    <div class="total">
+        <h4>Total Price: <span id="totalPrice">$0.00</span></h4>
+    </div>
+
+    <div class="place-order">
+        <a href="payment.html"><button id="placeOrderBtn">Continue</button></a>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Shop-Way. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Your JavaScript code here
+        document.addEventListener("DOMContentLoaded", () => {
+            const cartContainer = document.getElementById("cartContainer");
+            cartContainer.addEventListener("input", handleInputChange);
+            cartContainer.addEventListener("click", handleRemoveButtonClick);
+            updateTotalPrice();
+        });
+
+        function handleInputChange(event) {
+            if (event.target.tagName === "INPUT" && event.target.type === "number") {
+                updateCartItem(event.target);
+            }
+        }
+
+        function handleRemoveButtonClick(event) {
+            if (event.target.tagName === "BUTTON" && event.target.classList.contains("remove-button")) {
+                removeCartItem(event.target);
+            }
+        }
+
+        function updateCartItem(input) {
+            const cartItem = input.closest(".cart-item");
+            const itemQuantity = parseInt(input.value);
+            const itemPrice = parseFloat(cartItem.querySelector(".item-price").textContent.replace("$", ""));
+            const subtotal = (itemQuantity * itemPrice).toFixed(2);
+            cartItem.querySelector(".subtotal").textContent = `$${subtotal}`;
+
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            let totalPrice = 0.0;
+            const cartItems = document.querySelectorAll(".cart-item");
+
+            cartItems.forEach((item) => {
+                const itemSubtotal = parseFloat(item.querySelector(".subtotal").textContent.replace("$", ""));
+                totalPrice += itemSubtotal;
+            });
+
+            document.getElementById("totalPrice").textContent = `$${totalPrice.toFixed(2)}`;
+        }
+
+        function removeCartItem(button) {
+            const cartItem = button.closest(".cart-item");
+            const itemSubtotal = parseFloat(cartItem.querySelector(".subtotal").textContent.replace("$", ""));
+            cartItem.parentNode.removeChild(cartItem);
+
+            updateTotalPrice();
+        }
+    </script>
+    <script>
+        // JavaScript code here (as shown in the previous response)
+
+        // Function to calculate and update the total price
+        function updateTotalPrice() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let totalPrice = 0;
+
+            cartItems.forEach(item => {
+                totalPrice += item.price * item.quantity;
+            });
+
+            const totalPriceSpan = document.getElementById('totalPrice');
+            totalPriceSpan.textContent = `$${totalPrice.toFixed(2)}`;
+        }
+
+        // Call the updateTotalPrice function on page load and after updating the cart
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCartItems();
+            updateTotalPrice();
+        });
+    </script>
+
+
+
+
+    <script>
+        // Function to render the cart items
+        function renderCartItems() {
+            const cartItemsContainer = document.getElementById('cartItemsContainer');
+
+            // Get the cart items from localStorage
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            // Clear the existing content in the cartItemsContainer
+            cartItemsContainer.innerHTML = '';
+
+            // Iterate through each cart item and create the corresponding HTML elements
+            cartItems.forEach(item => {
+                const cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+
+                // Add the product image
+                const productImage = document.createElement('img');
+                productImage.src = item.image;
+                productImage.alt = item.name;
+                cartItemDiv.appendChild(productImage);
+
+                // Add the product name
+                const productName = document.createElement('h4');
+                productName.textContent = item.name;
+                cartItemDiv.appendChild(productName);
+
+                // Add the product price
+                const productPrice = document.createElement('p');
+                productPrice.textContent = `Price: $${item.price.toFixed(2)}`;
+                cartItemDiv.appendChild(productPrice);
+
+                // Add the product quantity and update button
+                const productQuantity = document.createElement('input');
+                productQuantity.type = 'number';
+                productQuantity.min = '1';
+                productQuantity.value = item.quantity;
+                cartItemDiv.appendChild(productQuantity);
+
+                // Add the "Update" button to update the quantity and calculate the total
+                const updateButton = document.createElement('button');
+                updateButton.textContent = 'Update';
+                updateButton.addEventListener('click', () => {
+                    item.quantity = parseInt(productQuantity.value);
+                    item.total = item.quantity * item.price;
+                    // Save the updated cart items back to localStorage
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    // Re-render the cart items to show the updated quantity and total
+                    renderCartItems();
+                });
+                cartItemDiv.appendChild(updateButton);
+
+                // Add the total price of the product
+                const productTotal = document.createElement('p');
+                productTotal.textContent = `Total: $${(item.quantity * item.price).toFixed(2)}`;
+                cartItemDiv.appendChild(productTotal);
+
+                // Add the "Remove" button to remove the product from the cart
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.addEventListener('click', () => {
+                    cartItems = cartItems.filter(cartItem => cartItem.name !== item.name);
+                    // Save the updated cart items back to localStorage
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    // Re-render the cart items to show the updated cart
+                    renderCartItems();
+                });
+                cartItemDiv.appendChild(removeButton);
+
+                cartItemsContainer.appendChild(cartItemDiv);
+            });
+        }
+
+        // Call the renderCartItems function on page load
+        document.addEventListener('DOMContentLoaded', renderCartItems);
+    </script>
+    <script>
+        // ... (previous code) ...
+    
+        function redirectToPayment() {
+            // Get the cart items from localStorage
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    
+            // Prepare the product details as a query parameter
+            const productDetails = cartItems.map(item => `${item.name}: ${item.quantity}`).join(', ');
+    
+            // Construct the URL with the query parameter
+            const paymentURL = `payment.html?products=${encodeURIComponent(productDetails)}`;
+    
+            // Redirect to payment.html
+            window.location.href = paymentURL;
+        }
+    </script>
+</body>
+
+</html>

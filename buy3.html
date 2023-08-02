@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buy Now Page</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.product-info {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Awesome Product</h1>
+  </header>
+  <main>
+    <div class="product-info">
+      <img src="img1/products/jumpsuit4.jpg" alt="Product Image">
+      <h2>Women Jumpsuit</h2>
+      <p>J TURRITOPSIS Solid Women Jumpsuit.</p>
+      <p>Price: Rs 1999</p>
+      <a href="checkout.html"><button id="buyNowBtn">Add To Continue</button></a>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 ShopWay. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+  <script>document.getElementById('buyNowBtn').addEventListener('click', function() {
+    alert('You are redirecting to  Shipping Page!');
+    // Here, you can add code to handle the actual purchase process, such as redirecting to a payment gateway.
+  });
+  </script>
+</body>
+</html>
